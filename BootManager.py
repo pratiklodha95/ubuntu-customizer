@@ -28,8 +28,12 @@ class Example(QtGui.QWidget):
         
         name = QtGui.QLabel('NAME')
         theme = QtGui.QLabel('THEME')
+	font_label=QtGui.QLabel('FONTS')
    	button = QtGui.QPushButton('SUBMIT')
-
+	
+	choices = ['apple', 'orange', 'banana']
+	fontsoption=QtGui.QComboBox()
+	fontsoption.addItems(choices)
         self.nameEdit = QtGui.QLineEdit()
         themeEdit = QtGui.QLineEdit()
    
@@ -41,8 +45,9 @@ class Example(QtGui.QWidget):
 
         grid.addWidget(theme, 2, 0)
         grid.addWidget(themeEdit, 2, 1)
-
-        grid.addWidget(button, 3, 0,1,2)
+	grid.addWidget(font_label,3,1)
+	grid.addWidget(fontsoption,3,2)
+        grid.addWidget(button, 4, 0,1,2)
       	
         
 	button.clicked.connect(self.buttonClicked)
