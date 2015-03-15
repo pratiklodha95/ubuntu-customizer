@@ -25,4 +25,4 @@ def runscript(txt):
     
     os.system('sudo mv name.png /lib/plymouth/themes/ubuntu-logo/ubuntu_logo.png')
     os.system('sudo update-initramfs -u ')
-    os.system('echo "Successfully Changed The Boot Logo with great difficulties" '); 
+    os.system('echo "Successfully Changed The Image" '); 

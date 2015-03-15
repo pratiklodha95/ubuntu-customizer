@@ -31,7 +31,7 @@ class Example(QtGui.QWidget):
 	font_label=QtGui.QLabel('FONTS')
    	button = QtGui.QPushButton('SUBMIT')
 	
-	choices = ['Ubuntu A', 'Ubuntu B', 'Ubuntu C']
+	choices = ['apple', 'orange', 'banana']
 	fontsoption=QtGui.QComboBox()
 	fontsoption.addItems(choices)
         self.nameEdit = QtGui.QLineEdit()
