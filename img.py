@@ -24,8 +24,9 @@ def runscript(txt):
     image.save('name.png') # save it
     
     #os.system('sudo mv name.png /lib/plymouth/themes/ubuntu-logo/ubuntu_logo.png')
-    os.system('sudo mv name.png xxx/ubuntu_logo.png')
-    os.system('sudo cp -r -f xxx /lib/plymouth/themes/ubuntu-customizer')
+    os.system('sudo mv name.png ubuntu-customiser/ubuntu_logo.png')
+    os.system('sudo cp -r -f ubuntu-customiser /lib/plymouth/themes/ubuntu-customiser')
+    os.system('sudo cp -f /etc/alternatives/default.plymouth default_backup.plymouth')
+    os.system('sudo cp -f default.plymouth /etc/alternatives/default.plymouth')
     os.system('sudo update-initramfs -u ')
-    os.system('sudo cp -f default.plymouth /etc/alternatives/default.plymouth)
     os.system('echo "Successfully Changed The Boot Logo with great difficulties" '); 
