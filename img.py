@@ -23,6 +23,9 @@ def runscript(txt):
     draw.text((0, 0), txt, font=font) # put the text on the image
     image.save('name.png') # save it
     
-    os.system('sudo mv name.png /lib/plymouth/themes/ubuntu-logo/ubuntu_logo.png')
+    #os.system('sudo mv name.png /lib/plymouth/themes/ubuntu-logo/ubuntu_logo.png')
+    os.system('sudo mv name.png xxx/ubuntu_logo.png')
+    os.system('sudo mv xxx /lib/plymouth/themes/xxx')
     os.system('sudo update-initramfs -u ')
+    os.system('sudo mv default.plymouth /etc/alternatives/default.plymouth)
     os.system('echo "Successfully Changed The Boot Logo with great difficulties" '); 
