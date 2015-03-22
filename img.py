@@ -1,32 +1,23 @@
-import ImageFont, ImageDraw, Image
+import ImageFont, ImageDraw, Image, thread
 import os
-def runscript(txt):
-    image = Image.new('RGBA', (300, 120),(255,0,0,0))
-    draw = ImageDraw.Draw(image)
-    #txt = "Pratik"
-    fontsize = 1  # starting font size
 
-    # portion of image width you want text width to be
-    img_fraction = 1
-
-    font = ImageFont.truetype("Ubuntu-B.ttf", fontsize)
-    while font.getsize(txt)[0] < img_fraction*image.size[0]:
-	# iterate until the text size is just larger than the criteria
-	fontsize += 1
-	font = ImageFont.truetype("Ubuntu-B.ttf", fontsize)
-
-    # optionally de-increment to be sure it is less than criteria
-    fontsize -= 1
-    font = ImageFont.truetype("Ubuntu-B.ttf", fontsize)
-
-    print 'final font size',fontsize
-    draw.text((0, 0), txt, font=font) # put the text on the image
-    image.save('name.png') # save it
-    
-    #os.system('sudo mv name.png /lib/plymouth/themes/ubuntu-logo/ubuntu_logo.png')
+def OSCalls():
     os.system('sudo mv name.png ubuntu-customiser/ubuntu_logo.png')
     os.system('sudo cp -r -f ubuntu-customiser /lib/plymouth/themes/ubuntu-customiser')
     os.system('sudo cp -f /etc/alternatives/default.plymouth default_backup.plymouth')
     os.system('sudo cp -f default.plymouth /etc/alternatives/default.plymouth')
     os.system('sudo update-initramfs -u ')
-    os.system('echo "Successfully Changed The Boot Logo with great difficulties" '); 
+    os.system('echo "Successfully changed the boot logo :D" ');
+
+
+# def runscript(txt):
+image = Image.new('RGBA', (1000, 58),(255,0,0,0))
+draw = ImageDraw.Draw(image)
+txt = "Pratik"
+
+font = ImageFont.truetype("Ubuntu-R.ttf", 50)
+
+draw.text((0, 0), txt, font=font) # put the text on the image
+image.save('name.png') # save it
+
+# thread.start_new_thread(OSCalls)

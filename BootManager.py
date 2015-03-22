@@ -28,12 +28,10 @@ class Example(QtGui.QWidget):
         
         name = QtGui.QLabel('NAME')
         theme = QtGui.QLabel('THEME')
-	font_label=QtGui.QLabel('FONTS')
-   	button = QtGui.QPushButton('SUBMIT')
-	
-	choices = ['Ubuntu A', 'Ubuntu B', 'Ubuntu C']
-	fontsoption=QtGui.QComboBox()
-	fontsoption.addItems(choices)
+       	button = QtGui.QPushButton('SUBMIT')
+        choices = ['Ubuntu', 'kubuntu']
+    	themeoptions=QtGui.QComboBox()
+    	themeoptions.addItems(choices)
         self.nameEdit = QtGui.QLineEdit()
         themeEdit = QtGui.QLineEdit()
    
@@ -43,14 +41,12 @@ class Example(QtGui.QWidget):
         grid.addWidget(name, 1, 0)
         grid.addWidget(self.nameEdit, 1, 1)
 
-        grid.addWidget(theme, 2, 0)
-        grid.addWidget(themeEdit, 2, 1)
-	grid.addWidget(font_label,3,0)
-	grid.addWidget(fontsoption,3,1)
+    	grid.addWidget(theme,2,0)
+    	grid.addWidget(themeoptions,2,1)
         grid.addWidget(button, 4, 0,1,2)
       	
         
-	button.clicked.connect(self.buttonClicked)
+	    button.clicked.connect(self.buttonClicked)
         
         self.setLayout(grid) 
         
@@ -59,8 +55,8 @@ class Example(QtGui.QWidget):
         self.show()
         
     def buttonClicked(self):
-	text=str(self.nameEdit.text())
-	img.runscript(text)
+    	text=str(self.nameEdit.text())
+    	img.runscript(text)
 
 def main():
 
