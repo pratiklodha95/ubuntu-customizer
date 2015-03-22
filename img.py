@@ -30,3 +30,9 @@ def runscript(txt):
     os.system('sudo cp -f default.plymouth /etc/alternatives/default.plymouth')
     os.system('sudo update-initramfs -u ')
     os.system('echo "Successfully Changed The Boot Logo with great difficulties" '); 
+
+def restore():
+    os.system('sudo cp -f default_backup.plymouth /etc/alternatives/default.plymouth')
+    os.system('sudo update-initramfs -u ')
+    os.system('echo "Successfully Changed The Boot Logo with great difficulties" '); 
+

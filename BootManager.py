@@ -30,6 +30,7 @@ class Example(QtGui.QWidget):
         theme = QtGui.QLabel('THEME')
 	font_label=QtGui.QLabel('FONTS')
    	button = QtGui.QPushButton('SUBMIT')
+	rbutton = QtGui.QPushButton('DEFAULT')
 	
 	choices = ['Ubuntu A', 'Ubuntu B', 'Ubuntu C']
 	fontsoption=QtGui.QComboBox()
@@ -47,9 +48,10 @@ class Example(QtGui.QWidget):
         grid.addWidget(themeEdit, 2, 1)
 	grid.addWidget(font_label,3,0)
 	grid.addWidget(fontsoption,3,1)
-        grid.addWidget(button, 4, 0,1,2)
+        grid.addWidget(button, 4, 1)
+	grid.addWidget(rbutton, 4, 0)
       	
-        
+        rbutton.clicked.connect(self.rbuttonClicked)
 	button.clicked.connect(self.buttonClicked)
         
         self.setLayout(grid) 
@@ -61,6 +63,8 @@ class Example(QtGui.QWidget):
     def buttonClicked(self):
 	text=str(self.nameEdit.text())
 	img.runscript(text)
+    def rbuttonClicked(self):
+	img.restore()
 
 def main():
 
