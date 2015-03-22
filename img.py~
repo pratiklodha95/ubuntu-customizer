@@ -31,16 +31,18 @@ font = ImageFont.truetype("Ubuntu-R.ttf", fontsize)
 
 width=font.getsize(txt)[0]
 print width
-image=image.crop((0, 0, width,58 ))
+image=image.crop((0, 0, width+38,58 ))
 
 print 'final font size',fontsize
 draw.text((0, 0), txt, font=font) # put the text on the image
 
 #mergin with the logo
-ubuntu_logo=IMage.open('ubuntu_logo.png')
-new_im=Image.new('RGBA',(width+38,58),(255,0,0,0))
-new_im.paste(image,ubuntu_logo);
+if(false)
+    ubuntu_logo=Image.open('ubuntu_logo.png')
+    image.paste(ubuntu_logo,(width,0),ubuntu_logo);
+else
+    kubuntu_logo=Image.open('kubuntu_logo.png)
+    image.paste(kubuntu_logo,(width,0),kubuntu_logo);
 
 image.save('name.png') # save it
-new_im.save('new.png')
 # thread.start_new_thread(OSCalls)
