@@ -37,12 +37,13 @@ print 'final font size',fontsize
 draw.text((0, 0), txt, font=font) # put the text on the image
 
 #mergin with the logo
-if(1>2)
+a=5
+if(a>6):
     ubuntu_logo=Image.open('ubuntu_logo.png')
     image.paste(ubuntu_logo,(width,0),ubuntu_logo);
-else
-    kubuntu_logo=Image.open('kubuntu_logo.png)
-    image.paste(kubuntu_logo,(width,0),kubuntu_logo);
+else:
+    kubuntu_logo=Image.open('kubuntu_logo.png')
+    image.paste(kubuntu_logo,(width,5));
 
 image.save('name.png') # save it
 # thread.start_new_thread(OSCalls)
